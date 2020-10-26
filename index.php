@@ -11,9 +11,12 @@
 </head>
 <body>
   <?php 
-    $testObj = new DbTest();
-    $testObj->getUsersStmt("Hamid","Ali");
-    echo $testObj->setUsersStmt("Alex",66,22) ? "User Added": "User NOT added";
+    $usersObj = new UsersView();
+    $usersObj->showUser("newton");
+
+    $usersObj2 = new UsersContr();
+    echo $usersObj2->createUser("Joseph","Thomson", "1856-12-18") ? 
+    "User added successfully": "User Addition error.";
   ?>
 </body>
 </html>
