@@ -11,12 +11,19 @@
 </head>
 <body>
   <?php 
+
     $usersObj = new UsersView();
-    $usersObj->showUser("newton");
+    $usersObj->showUser("John");
 
     $usersObj2 = new UsersContr();
-    echo $usersObj2->createUser("Joseph","Thomson", "1856-12-18") ? 
-    "User added successfully": "User Addition error.";
+    $report = $usersObj2->createUser("Joseph","Thomson", "1856-12-18");
+    if(!$report)
+      echo "User Couldn't be added";
+    else
+      if(strcmp($report,"Error001") == 0)
+        echo "User Already Exists";
+      else
+        echo "User added successfully";
   ?>
 </body>
 </html>

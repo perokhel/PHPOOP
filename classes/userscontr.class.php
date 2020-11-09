@@ -4,6 +4,5 @@
     public function createUser($firstname, $lastname, $dob){
       return $this->setUser($firstname, $lastname, $dob);
     }
-    
   }
 ?>
